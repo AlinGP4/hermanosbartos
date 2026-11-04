@@ -4,7 +4,17 @@ import Image from "next/image";
 import { FormEvent, useState } from "react";
 
 export function ArrowUpRight() {
-  return <span aria-hidden="true">↗</span>;
+  return (
+    <svg
+      className="arrow-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M5 19 19 5M10 5h9v9" />
+    </svg>
+  );
 }
 
 export function Header() {
@@ -116,7 +126,9 @@ export function ProjectGallery() {
           <article className={`project-card ${project.wide ? "project-card--wide" : ""}`} key={project.title}>
             <div className="project-card__image">
               <Image src={project.image} alt={project.alt} fill sizes="(max-width: 760px) 100vw, 80vw" />
-              <span className="project-card__arrow" aria-hidden="true">↗</span>
+              <span className="project-card__arrow" aria-hidden="true">
+                <ArrowUpRight />
+              </span>
             </div>
             <div className="project-card__copy">
               <div>
