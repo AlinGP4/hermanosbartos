@@ -3,22 +3,22 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   applicationName: "Hermanos Bartos",
-  title: "Reformas integrales en Castellón | Hermanos Bartos",
+  title: "Construcción y reforma de piscinas | Hermanos Bartos",
   description:
-    "Reformas integrales en Castellón y provincia: cocinas, baños, piscinas, parquet y exteriores. Estudiamos tu vivienda y preparamos un presupuesto claro.",
+    "Especialistas en construcción, diseño y reforma de piscinas en Valencia, Alicante y Castellón. También realizamos reformas de interior.",
   openGraph: {
     type: "website",
     locale: "es_ES",
     siteName: "Hermanos Bartos",
-    title: "Reformas integrales en Castellón | Hermanos Bartos",
+    title: "Piscinas en la Comunidad Valenciana | Hermanos Bartos",
     description:
-      "Reformas de viviendas, cocinas, baños, piscinas y exteriores en Castellón y provincia.",
+      "Construcción y rehabilitación de piscinas en Valencia, Alicante y Castellón.",
   },
   twitter: {
     card: "summary",
-    title: "Reformas integrales en Castellón | Hermanos Bartos",
+    title: "Piscinas en la Comunidad Valenciana | Hermanos Bartos",
     description:
-      "Reformas de viviendas, cocinas, baños, piscinas y exteriores en Castellón y provincia.",
+      "Construcción y rehabilitación de piscinas en Valencia, Alicante y Castellón.",
   },
   robots: {
     index: true,

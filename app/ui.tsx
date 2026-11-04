@@ -44,10 +44,11 @@ export function Header() {
           aria-label="Navegación principal"
         >
           {[
-            ["Proyectos", "/#proyectos"],
+            ["Piscinas", "/#piscinas"],
             ["Servicios", "/#servicios"],
-            ["Guía de reformas", "/reformas-castellon"],
-            ["Proceso", "/#proceso"],
+            ["Proyectos", "/#proyectos"],
+            ["Interiores", "/#interiores"],
+            ["Zona", "/#zona"],
           ].map(([label, href]) => (
             <a href={href} key={href} onClick={() => setOpen(false)}>
               {label}
@@ -64,43 +65,42 @@ export function Header() {
 
 const projects = [
   {
-    title: "Casa de la luz",
-    meta: "Reforma integral · Interiorismo",
-    category: "interiores",
-    image: "/images/hero.jpg",
-    alt: "Salón mediterráneo reformado con acabados cálidos",
+    title: "Piscina integrada en el jardín",
+    meta: "Diseño de piscina · Exterior mediterráneo",
+    category: "nuevas",
+    image: "/images/piscinas-comunidad-valenciana-hero.jpg",
+    alt: "Piscina contemporánea integrada en el jardín de una vivienda mediterránea",
     wide: true,
   },
   {
-    title: "La cocina, el corazón",
-    meta: "Cocina a medida · Acabados",
-    category: "cocinas",
-    image: "/images/cocina.jpg",
-    alt: "Cocina abierta reformada con mobiliario de roble",
+    title: "Una piscina para un patio estrecho",
+    meta: "Piscina compacta · Diseño a medida",
+    category: "nuevas",
+    image: "/images/piscina-compacta-valencia.jpg",
+    alt: "Piscina compacta diseñada para un patio urbano estrecho",
   },
   {
-    title: "Un verano diferente",
-    meta: "Piscina · Exterior",
-    category: "piscinas",
-    image: "/images/piscina.jpg",
-    alt: "Piscina reformada en una vivienda mediterránea",
+    title: "Rehabilitación completa",
+    meta: "Renovación de vaso · Nuevos acabados",
+    category: "reformas",
+    image: "/images/rehabilitacion-piscina-despues.jpg",
+    alt: "Piscina rehabilitada con nuevos revestimientos, coronación y escalera integrada",
   },
   {
-    title: "Texturas naturales",
-    meta: "Parquet · Interiorismo",
-    category: "suelos",
-    image: "/images/parquet.jpg",
-    alt: "Salón con parquet natural colocado en espiga",
+    title: "Iluminación para alargar la tarde",
+    meta: "Iluminación · Piscina y jardín",
+    category: "acabados",
+    image: "/images/piscina-iluminacion-alicante.jpg",
+    alt: "Piscina contemporánea con iluminación subacuática al anochecer",
     wide: true,
   },
 ];
 
 const filters = [
   ["todos", "Todos"],
-  ["interiores", "Interiores"],
-  ["cocinas", "Cocinas"],
-  ["piscinas", "Piscinas"],
-  ["suelos", "Suelos"],
+  ["nuevas", "Piscinas nuevas"],
+  ["reformas", "Rehabilitación"],
+  ["acabados", "Acabados"],
 ];
 
 export function ProjectGallery() {
@@ -141,6 +141,9 @@ export function ProjectGallery() {
           </article>
         ))}
       </div>
+      <p className="projects-note">
+        Imágenes conceptuales creadas para mostrar tipos de piscina, acabados y posibilidades de diseño.
+      </p>
     </>
   );
 }
@@ -150,8 +153,8 @@ export function CompareSlider() {
 
   return (
     <div className="compare" style={{ "--split": `${split}%` } as React.CSSProperties}>
-      <Image className="compare__before" src="/images/antes.jpg" alt="Salón antes de la reforma" fill sizes="(max-width: 800px) 100vw, 60vw" />
-      <Image className="compare__after" src="/images/despues.jpg" alt="El mismo salón después de la reforma" fill sizes="(max-width: 800px) 100vw, 60vw" />
+      <Image className="compare__before" src="/images/rehabilitacion-piscina-antes.jpg" alt="Piscina antigua antes de la rehabilitación" fill sizes="(max-width: 800px) 100vw, 60vw" />
+      <Image className="compare__after" src="/images/rehabilitacion-piscina-despues.jpg" alt="La misma piscina renovada con nuevos revestimientos y escalera integrada" fill sizes="(max-width: 800px) 100vw, 60vw" />
       <span className="compare__label compare__label--before">Antes</span>
       <span className="compare__label compare__label--after">Después</span>
       <div className="compare__handle"><span>↔</span></div>
@@ -188,12 +191,14 @@ export function ContactForm() {
       <label>
         <span>Tipo de reforma</span>
         <select name="tipo" defaultValue="" required>
-          <option value="" disabled>¿Qué quieres reformar? *</option>
-          <option>Piscina o exterior</option>
+          <option value="" disabled>¿Qué proyecto tienes? *</option>
+          <option>Construcción de piscina</option>
+          <option>Reforma o rehabilitación de piscina</option>
+          <option>Revestimientos y acabados</option>
+          <option>Zona exterior o terraza</option>
           <option>Cocina</option>
           <option>Baño</option>
           <option>Reforma integral</option>
-          <option>Parquet o suelos</option>
           <option>Otro</option>
         </select>
       </label>
