@@ -7,25 +7,25 @@ const services = [
   {
     number: "01",
     title: "Piscinas y exterior",
-    copy: "Renovación de piscinas, terrazas y zonas exteriores pensadas para disfrutarlas.",
+    copy: "Reparación del vaso, impermeabilización, filtración, coronación y pavimentos exteriores.",
     image: "/images/piscina.jpg",
   },
   {
     number: "02",
     title: "Cocinas a medida",
-    copy: "Distribución, mobiliario e instalaciones coordinadas hasta el último acabado.",
+    copy: "Nueva distribución, instalaciones, mobiliario, encimeras, iluminación y revestimientos.",
     image: "/images/cocina.jpg",
   },
   {
     number: "03",
     title: "Reformas integrales",
-    copy: "Rediseñamos la vivienda completa con un único equipo y una planificación clara.",
+    copy: "Redistribución e intervención completa en instalaciones, acabados y carpinterías.",
     image: "/images/hero.jpg",
   },
   {
     number: "04",
     title: "Parquet y suelos",
-    copy: "Instalación y renovación de madera y superficies resistentes para cada espacio.",
+    copy: "Preparación de la base, instalación de madera, laminado, porcelánico y rodapiés.",
     image: "/images/parquet.jpg",
   },
 ];
@@ -52,8 +52,8 @@ export default function Page() {
           </h1>
           <div className="hero__intro">
             <p>
-              Transformamos viviendas con una visión clara: buen diseño, materiales honestos y
-              una ejecución cuidada.
+              Reformamos viviendas en Castellón y provincia con buen diseño, materiales honestos
+              y una ejecución cuidada.
             </p>
             <a className="button" href="#proyectos">
               Ver proyectos <ArrowUpRight />
@@ -61,7 +61,7 @@ export default function Page() {
           </div>
         </div>
         <div className="container hero__footer">
-          <span>Diseñamos · Reformamos · Transformamos</span>
+          <span>Reformas en Castellón, de principio a fin</span>
           <a href="#filosofia">Explorar ↓</a>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function Page() {
         <div className="container intro__grid">
           <div>
             <p className="eyebrow">01 / Nuestra filosofía</p>
-            <h2>No hacemos solo reformas. Creamos lugares que importan.</h2>
+            <h2>Una reforma empieza por entender la casa.</h2>
           </div>
           <div className="intro__copy">
             <div className="intro__image">
@@ -82,9 +82,9 @@ export default function Page() {
               />
             </div>
             <p>
-              Cada espacio tiene una nueva historia por contar. Desde una cocina que reúne a toda
-              la familia hasta una piscina que cambia el verano: cuidamos el recorrido completo,
-              del primer boceto al último acabado.
+              Primero vemos cómo se usa cada estancia y qué problemas tiene. Medimos, revisamos
+              instalaciones y hablamos de prioridades. Con esa información se decide qué merece
+              conservarse, qué debe cambiar y dónde conviene invertir el presupuesto.
             </p>
             <a className="text-link" href="#proceso">
               Nuestra forma de trabajar <ArrowUpRight />
@@ -113,10 +113,10 @@ export default function Page() {
         <div className="container">
           <div className="section-heading section-heading--dark">
             <div>
-              <p className="eyebrow eyebrow--light">03 / Lo que hacemos</p>
-              <h2>Todo lo necesario para transformar tu vivienda.</h2>
+              <p className="eyebrow eyebrow--light">03 / Servicios de reforma</p>
+              <h2>Reformas de vivienda en Castellón, por dentro y por fuera.</h2>
             </div>
-            <p>Un proceso coordinado para que cada decisión encaje con la siguiente.</p>
+            <p>Una primera visión de los trabajos que coordinamos en viviendas y espacios exteriores.</p>
           </div>
           <div className="services__grid">
             {services.map((service) => (
@@ -131,6 +131,9 @@ export default function Page() {
               </a>
             ))}
           </div>
+          <a className="services__more" href="/reformas-castellon">
+            Ver la guía de reformas en Castellón <ArrowUpRight />
+          </a>
         </div>
       </section>
 
@@ -144,11 +147,12 @@ export default function Page() {
           />
         </div>
         <div className="manifesto__copy">
-          <p className="eyebrow">04 / El valor de cada detalle</p>
+          <p className="eyebrow">04 / Antes de empezar la obra</p>
           <h2>Un buen resultado empieza mucho antes de la obra.</h2>
           <p>
-            Escuchamos, medimos y planificamos pensando en cómo quieres vivir. Combinamos la
-            sensibilidad por el diseño con el oficio de quienes saben construir.
+            Una medición correcta y un presupuesto por partidas ayudan a tomar decisiones antes
+            de demoler. También permiten pedir materiales con tiempo y ordenar la entrada de cada
+            oficio en la vivienda.
           </p>
           <a className="text-link" href="#contacto">
             Cuéntanos tu idea <ArrowUpRight />
@@ -198,10 +202,10 @@ export default function Page() {
         <div className="container contact__grid">
           <div>
             <p className="eyebrow">07 / Hablemos de tu proyecto</p>
-            <h2>Tu próxima reforma empieza aquí.</h2>
+            <h2>Cuéntanos qué quieres reformar.</h2>
             <p>
-              ¿Una cocina nueva, una piscina renovada o una reforma completa? Cuéntanos qué tienes
-              en mente y damos forma a la idea.
+              Indica el municipio, el tipo de vivienda y las estancias afectadas. Con esos datos
+              podremos preparar una primera conversación útil sobre el alcance de la obra.
             </p>
           </div>
           <ContactForm />
@@ -213,20 +217,22 @@ export default function Page() {
           <div className="footer__top">
             <div>
               <a className="brand brand--footer" href="#inicio" aria-label="Hermanos Bartos, inicio">
-                HERMANOS <span>BARTOS</span>
+                <Image className="brand__mark" src="/brand/logo-mark.svg" alt="" width={38} height={38} />
+                <span className="brand__wordmark">HERMANOS <strong>BARTOS</strong></span>
               </a>
               <p className="footer__statement">Espacios bien pensados. Reformas bien hechas.</p>
             </div>
             <nav className="footer__nav" aria-label="Navegación del pie">
               <a href="#proyectos">Proyectos</a>
               <a href="#servicios">Servicios</a>
+              <a href="/reformas-castellon">Guía de reformas</a>
               <a href="#proceso">Proceso</a>
               <a href="#contacto">Contacto</a>
             </nav>
           </div>
           <div className="footer__bottom">
             <span>© {new Date().getFullYear()} Hermanos Bartos</span>
-            <span>Reformas · Interiorismo · Exterior</span>
+            <span>Reformas en Castellón y provincia</span>
             <a href="#inicio">Volver arriba ↑</a>
           </div>
         </div>

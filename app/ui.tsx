@@ -23,8 +23,9 @@ export function Header() {
   return (
     <header className="header">
       <div className="container header__inner">
-        <a className="brand" href="#inicio" aria-label="Hermanos Bartos, inicio">
-          HERMANOS <span>BARTOS</span>
+        <a className="brand" href="/" aria-label="Hermanos Bartos, inicio">
+          <Image className="brand__mark" src="/brand/logo-mark.svg" alt="" width={36} height={36} priority />
+          <span className="brand__wordmark">HERMANOS <strong>BARTOS</strong></span>
         </a>
         <button
           className="menu-button"
@@ -43,17 +44,17 @@ export function Header() {
           aria-label="Navegación principal"
         >
           {[
-            ["Proyectos", "#proyectos"],
-            ["Servicios", "#servicios"],
-            ["Nosotros", "#nosotros"],
-            ["Proceso", "#proceso"],
+            ["Proyectos", "/#proyectos"],
+            ["Servicios", "/#servicios"],
+            ["Guía de reformas", "/reformas-castellon"],
+            ["Proceso", "/#proceso"],
           ].map(([label, href]) => (
             <a href={href} key={href} onClick={() => setOpen(false)}>
               {label}
             </a>
           ))}
         </nav>
-        <a className="header__cta" href="#contacto">
+        <a className="header__cta" href="/#contacto">
           Solicita presupuesto <ArrowUpRight />
         </a>
       </div>
@@ -190,6 +191,7 @@ export function ContactForm() {
           <option value="" disabled>¿Qué quieres reformar? *</option>
           <option>Piscina o exterior</option>
           <option>Cocina</option>
+          <option>Baño</option>
           <option>Reforma integral</option>
           <option>Parquet o suelos</option>
           <option>Otro</option>
