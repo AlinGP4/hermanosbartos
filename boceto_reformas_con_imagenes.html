@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#171c1b">
+    <title>FORMA · Reformas y espacios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --dark: #191e1c;
+            --paper: #f6f5f1;
+            --white: #fff;
+            --line: #d9d9d3;
+            --accent: #d6a064;
+            --gray: #71756f
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Manrope, sans-serif;
+            letter-spacing: -.055em
+        }
+
+        h1 {
+            font-size: clamp(3.7rem, 8.7vw, 9.7rem);
+            line-height: .92;
+            font-weight: 600
+        }
+
+        h2 {
+            font-size: clamp(2.6rem, 5.5vw, 6rem);
+            line-height: 1.01;
+            font-weight: 600
+        }
+
+        h3 {
+            font-size: clamp(1.35rem, 2vw, 2.2rem)
+        }
+
+        .wrap {
+            width: min(1440px, calc(100% - 100px));
+            margin: auto
+        }
+
+        .kicker {
+            text-transform: uppercase;
+            letter-spacing: .19em;
+            font-size: 11px;
+            font-weight: 800
+        }
+
+        .top {
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: white;
+            border-bottom: 1px solid #ffffff50
+        }
+
+        .nav {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+
+        .logo {
+            font-family: Manrope, sans-serif;
+            letter-spacing: -.09em;
+            font-size: 32px;
+            font-weight: 800
+        }
+
+        .logo span {
+            color: var(--accent)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 33px;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .nav-links a:hover {
+            color: var(--accent)
+        }
+
+        .nav-cta {
+            border: 1px solid #fff8;
+            padding: 15px 21px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            gap: 18px;
+            align-items: center
+        }
+
+        .nav-cta:hover,
+        .btn:hover {
+            background: #e8b57b;
+            color: #161a18
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            color: white;
+            border: 0;
+            font-size: 26px
+        }
+
+        .hero {
+            height: min(900px, 100svh);
+            min-height: 680px;
+            background: linear-gradient(90deg, rgba(10, 14, 13, .76), rgba(10, 14, 13, .1) 88%), linear-gradient(0deg, rgba(10, 14, 13, .42), transparent 40%), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: white
+        }
+
+        .hero-body {
+            padding-top: 90px
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 36px
+        }
+
+        .eyebrow:before {
+            content: '';
+            width: 38px;
+            height: 1px;
+            background: var(--accent)
+        }
+
+        .hero h1 {
+            max-width: 1200px
+        }
+
+        .hero h1 em {
+            font-weight: 400;
+            font-style: normal;
+            color: #e8b57b
+        }
+
+        .hero-sub {
+            display: flex;
+            align-items: end;
+            gap: 45px;
+            margin-top: 37px;
+            flex-wrap: wrap
+        }
+
+        .hero-sub p {
+            max-width: 445px;
+            font-size: 17px;
+            line-height: 1.65;
+            color: #ecebe6
+        }
+
+        .btn {
+            background: var(--accent);
+            padding: 19px 26px;
+            border: 0;
+            display: inline-flex;
+            gap: 46px;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 11px;
+            letter-spacing: .09em;
+            transition: .2s
+        }
+
+        .btn.light {
+            background: var(--dark);
+            color: white
+        }
+
+        .btn.light:hover {
+            background: var(--accent);
+            color: var(--dark)
+        }
+
+        .hero-foot {
+            position: absolute;
+            bottom: 28px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .13em
+        }
+
+        .hero-foot .dash {
+            width: 120px;
+            height: 1px;
+            background: #fffc;
+            margin-bottom: 10px
+        }
+
+        .section {
+            padding: 132px 0
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 35px;
+            margin-bottom: 53px
+        }
+
+        .section-head h2 {
+            max-width: 880px
+        }
+
+        .section-head p {
+            max-width: 350px;
+            line-height: 1.7;
+            color: var(--gray);
+            font-size: 15px
+        }
+
+        .section-head .kicker {
+            margin-bottom: 25px
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 12%;
+            align-items: start
+        }
+
+        .intro h2 {
+            max-width: 820px
+        }
+
+        .intro-r {
+            padding-top: 52px
+        }
+
+        .intro-r p {
+            font-size: 18px;
+            line-height: 1.75;
+            color: #535752;
+            margin-bottom: 30px
+        }
+
+        .text-link {
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            border-bottom: 1px solid;
+            padding-bottom: 10px;
+            display: inline-flex;
+            gap: 48px
+        }
+
+        .num {
+            font-size: 12px;
+            color: var(--gray)
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 33px
+        }
+
+        .filter {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 12px 18px;
+            color: #515650;
+            font-size: 12px
+        }
+
+        .filter.active,
+        .filter:hover {
+            background: var(--dark);
+            color: white;
+            border-color: var(--dark)
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 54px 22px
+        }
+
+        .project-card {
+            min-width: 0
+        }
+
+        .project-card.wide {
+            grid-column: span 2
+        }
+
+        .project-img {
+            height: clamp(270px, 38vw, 610px);
+            overflow: hidden;
+            position: relative;
+            background: #ddd
+        }
+
+        .project-card.wide .project-img {
+            height: clamp(360px, 54vw, 780px)
+        }
+
+        .project-img img {
+            transition: transform .7s
+        }
+
+        .project-card:hover img {
+            transform: scale(1.045)
+        }
+
+        .project-img .arrow {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: #f8f7f3;
+            color: var(--dark);
+            display: grid;
+            place-items: center;
+            font-size: 23px
+        }
+
+        .project-copy {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 16px;
+            padding-top: 21px
+        }
+
+        .project-copy h3 {
+            font-weight: 650
+        }
+
+        .project-copy p {
+            margin-top: 7px;
+            color: var(--gray);
+            font-size: 13px
+        }
+
+        .project-copy .index {
+            font-size: 12px;
+            color: var(--gray)
+        }
+
+        .projects .hidden {
+            display: none
+        }
+
+        .services-section {
+            background: var(--dark);
+            color: white
+        }
+
+        .services-section .section-head p {
+            color: #bec2bc
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #565b56;
+            border: 1px solid #565b56
+        }
+
+        .service {
+            background: var(--dark);
+            padding: 34px 29px 37px;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            transition: background .2s
+        }
+
+        .service:hover {
+            background: #272e29
+        }
+
+        .service .service-num {
+            color: var(--accent);
+            font-size: 13px;
+            margin-bottom: 55px
+        }
+
+        .service h3 {
+            line-height: 1.1;
+            margin-bottom: 14px
+        }
+
+        .service p {
+            font-size: 13px;
+            color: #b7bdb5;
+            line-height: 1.7
+        }
+
+        .service .service-arrow {
+            margin-top: auto;
+            font-size: 28px
+        }
+
+        .service .service-photo {
+            height: 150px;
+            overflow: hidden;
+            margin-bottom: 22px
+        }
+
+        .service-photo img {
+            filter: saturate(.65)
+        }
+
+        .manifesto {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            min-height: 680px
+        }
+
+        .manifesto-img {
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+') center/cover
+        }
+
+        .manifesto-content {
+            background: #dfdcd3;
+            padding: clamp(40px, 7vw, 110px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .manifesto-content h2 {
+            margin: 28px 0
+        }
+
+        .manifesto-content p:not(.kicker) {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #515650;
+            max-width: 520px;
+            margin-bottom: 28px
+        }
+
+        .beforeafter {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 55px;
+            align-items: center
+        }
+
+        .beforeafter .copy p {
+            line-height: 1.7;
+            color: var(--gray);
+            max-width: 350px;
+            margin-top: 22px
+        }
+
+        .compare {
+            --split: 50%;
+            height: 530px;
+            position: relative;
+            overflow: hidden;
+            background: #ddd
+        }
+
+        .compare>img {
+            position: absolute;
+            inset: 0
+        }
+
+        .compare .before {
+            clip-path: inset(0 calc(100% - var(--split)) 0 0);
+            filter: grayscale(.45) brightness(.8)
+        }
+
+        .compare .after {
+            clip-path: inset(0 0 0 var(--split))
+        }
+
+        .compare .handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--split);
+            width: 2px;
+            background: white;
+            transform: translateX(-50%);
+            pointer-events: none
+        }
+
+        .compare .handle:after {
+            content: '↔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 50%;
+            width: 51px;
+            height: 51px;
+            display: grid;
+            place-items: center;
+            color: var(--dark);
+            font-size: 22px;
+            box-shadow: 0 2px 16px #0003
+        }
+
+        .compare .pill {
+            position: absolute;
+            z-index: 2;
+            top: 20px;
+            background: #fff;
+            padding: 8px 13px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase
+        }
+
+        .compare .pill.before-label {
+            left: 20px
+        }
+
+        .compare .pill.after-label {
+            right: 20px
+        }
+
+        .compare input {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: ew-resize;
+            z-index: 3
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 48px
+        }
+
+        .step {
+            padding: 28px 0 15px;
+            border-top: 1px solid #aab0a9
+        }
+
+        .step strong {
+            font-size: 12px;
+            color: #888f85
+        }
+
+        .step h3 {
+            margin: 34px 0 12px
+        }
+
+        .step p {
+            line-height: 1.7;
+            color: #676c65;
+            font-size: 14px;
+            max-width: 370px
+        }
+
+        .contact {
+            background: #d6a064;
+            padding: 110px 0
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 10%;
+            align-items: start
+        }
+
+        .contact h2 {
+            margin: 24px 0;
+            max-width: 860px
+        }
+
+        .contact p {
+            line-height: 1.75;
+            max-width: 490px
+        }
+
+        .contact form {
+            display: grid;
+            gap: 13px
+        }
+
+        .contact input,
+        .contact textarea,
+        .contact select {
+            border: 0;
+            border-bottom: 1px solid #191e1c88;
+            background: transparent;
+            padding: 17px 4px;
+            color: var(--dark);
+            outline: 0;
+            border-radius: 0;
+            width: 100%
+        }
+
+        .contact input::placeholder,
+        .contact textarea::placeholder {
+            color: #3c403b
+        }
+
+        .contact .btn {
+            background: var(--dark);
+            color: white;
+            margin-top: 13px;
+            justify-content: space-between
+        }
+
+        .contact .note {
+            font-size: 11px;
+            margin-top: 10px
+        }
+
+        .footer {
+            background: #141917;
+            color: white;
+            padding: 64px 0 25px
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: start;
+            padding-bottom: 95px
+        }
+
+        .footer-tag {
+            font-family: Manrope;
+            font-size: clamp(27px, 4vw, 55px);
+            letter-spacing: -.06em;
+            max-width: 550px;
+            line-height: 1.05;
+            margin-top: 22px
+        }
+
+        .footer-cols {
+            display: flex;
+            gap: 70px
+        }
+
+        .footer-cols div {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            font-size: 13px
+        }
+
+        .footer-cols strong {
+            color: #aeb5ad;
+            font-size: 11px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 6px
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #555c55;
+            display: flex;
+            justify-content: space-between;
+            color: #b6bab4;
+            font-size: 11px
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .6s, transform .6s
+        }
+
+        .reveal.on {
+            opacity: 1;
+            transform: none
+        }
+
+        @media(max-width:900px) {
+            .wrap {
+                width: calc(100% - 42px)
+            }
+
+            .nav {
+                height: 75px
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                right: 0;
+                padding: 26px;
+                background: var(--dark);
+                flex-direction: column
+            }
+
+            .nav-links.open {
+                display: flex
+            }
+
+            .menu-toggle {
+                display: block
+            }
+
+            .nav-cta {
+                display: none
+            }
+
+            .hero {
+                min-height: 650px;
+                max-height: 800px
+            }
+
+            .section {
+                padding: 85px 0
+            }
+
+            .intro {
+                gap: 30px
+            }
+
+            .intro-r {
+                padding-top: 0
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .service {
+                min-height: 380px
+            }
+
+            .manifesto {
+                min-height: 490px
+            }
+
+            .beforeafter {
+                grid-template-columns: 1fr
+            }
+
+            .compare {
+                height: 480px
+            }
+
+            .contact-grid {
+                gap: 35px
+            }
+
+            .footer-cols {
+                gap: 26px
+            }
+        }
+
+        @media(max-width:620px) {
+            h1 {
+                font-size: clamp(3.4rem, 14vw, 5.8rem)
+            }
+
+            .hero {
+                min-height: 710px;
+                align-items: center
+            }
+
+            .hero-body {
+                padding-top: 40px
+            }
+
+            .hero-sub {
+                gap: 26px
+            }
+
+            .hero-sub p {
+                font-size: 15px
+            }
+
+            .hero-foot {
+                font-size: 9px
+            }
+
+            .section-head {
+                display: block
+            }
+
+            .section-head p {
+                margin-top: 18px
+            }
+
+            .intro,
+            .manifesto,
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .projects {
+                gap: 35px 12px
+            }
+
+            .project-card,
+            .project-card.wide {
+                grid-column: span 2
+            }
+
+            .project-img,
+            .project-card.wide .project-img {
+                height: 340px
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr
+            }
+
+            .service {
+                min-height: 360px
+            }
+
+            .manifesto-img {
+                min-height: 370px
+            }
+
+            .manifesto-content {
+                padding: 65px 24px
+            }
+
+            .compare {
+                height: 390px
+            }
+
+            .steps {
+                grid-template-columns: 1fr
+            }
+
+            .contact {
+                padding: 77px 0
+            }
+
+            .footer-top {
+                display: block;
+                padding-bottom: 70px
+            }
+
+            .footer-cols {
+                margin-top: 35px;
+                gap: 40px
+            }
+
+            .footer-bottom {
+                gap: 15px;
+                flex-wrap: wrap
+            }
+
+            .project-copy h3 {
+                font-size: 20px
+            }
+        }
+    </style>
+    <meta name="description"
+        content="Boceto visual ilustrativo de empresa de reformas, piscinas, cocinas, interiores y parquet">
+</head>
+
+<body>
+    <header class="top">
+        <div class="wrap nav"><a class="logo" href="#inicio">FORMA<span>.</span></a>
+            <nav class="nav-links" id="navLinks"><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a
+                    href="#nosotros">Nosotros</a><a href="#proceso">Cómo trabajamos</a><a href="#contacto">Contacto</a>
+            </nav><a href="#contacto" class="nav-cta">SOLICITA PRESUPUESTO <span>↗</span></a><button class="menu-toggle"
+                aria-label="Abrir menú"
+                onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="wrap hero-body">
+                <p class="kicker eyebrow">Reformas integrales · Interiorismo · Exterior</p>
+                <h1>Espacios<br>para <em>vivirlos.</em></h1>
+                <div class="hero-sub">
+                    <p>Transformamos viviendas con una visión clara: buen diseño, materiales honestos y una ejecución
+                        impecable.</p><a href="#proyectos" class="btn">DESCUBRE NUESTROS PROYECTOS <span>↗</span></a>
+                </div>
+            </div>
+            <div class="wrap hero-foot">
+                <div>
+                    <div class="dash"></div>Diseñamos. Reformamos. Transformamos.
+                </div>
+                <div>DESLIZA PARA EXPLORAR ↓</div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap intro reveal">
+                <div>
+                    <p class="kicker" style="margin-bottom:24px">01 / Nuestra filosofía</p>
+                    <h2>No hacemos solo reformas. Creamos lugares que importan.</h2>
+                </div>
+                <div class="intro-r">
+                    <p>Creemos que cada espacio tiene una nueva historia por contar. Desde una cocina que reúne a toda
+                        la familia hasta una piscina que transforma el verano: cuidamos cada detalle, del primer boceto
+                        al último acabado.</p><a href="#nosotros" class="text-link">CONOCE NUESTRA FORMA DE TRABAJAR
+                        <span>↗</span></a>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="proyectos" style="padding-top:20px">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="kicker">02 / Trabajos seleccionados</p>
+                        <h2>Proyectos que hablan<br>por nosotros.</h2>
+                    </div>
+                    <p>Una selección de los espacios que nos inspiran. Cada proyecto, una solución diferente.</p>
+                </div>
+                <div class="filters" role="group" aria-label="Filtrar proyectos"><button class="filter active"
+                        data-filter="todos">Todos los proyectos</button><button class="filter"
+                        data-filter="interiores">Interiores</button><button class="filter"
+                        data-filter="cocinas">Cocinas</button><button class="filter"
+                        data-filter="piscinas">Piscinas</button><button class="filter"
+                        data-filter="suelos">Suelos</button></div>
+                <div class="projects" id="projectGrid">
+                    <article class="project-card wide" data-category="interiores">
+                        <div class="project-img"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+"
+                                alt="Salón reformado, con iluminación natural y tonos cálidos"><span
+                                class="arrow">↗</span></div>
+                        <div class="project-copy">
+                            <div>
+                                <h3>Casa de la luz</h3>
+                                <p>Reforma integral · Interiorismo</p>
+                            </div><span class="index">01 / 05</span>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="cocinas">
+                        <div class="project-img"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxyZWN0IHk9IjY4MCIgd2lkdGg9IjE0MDAiIGhlaWdodD0iMjIwIiBmaWxsPSJ1cmwoI2Zsb29yKSIvPjxyZWN0IHg9Ijc1IiB5PSIxMDUiIHdpZHRoPSIzMjAiIGhlaWdodD0iNTAwIiBmaWxsPSIjNTc2NDVlIi8+PHJlY3QgeD0iNDA1IiB5PSIxMDUiIHdpZHRoPSIzMjAiIGhlaWdodD0iNTAwIiBmaWxsPSIjZDNjMmFiIi8+PHJlY3QgeD0iNzM1IiB5PSIxMDUiIHdpZHRoPSI1NjUiIGhlaWdodD0iNTAwIiBmaWxsPSIjZTllNWRjIi8+PHJlY3QgeD0iOTIiIHk9IjEyNSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIzNjAiIGZpbGw9IiM2ZDc5NzMiLz48cmVjdCB4PSI3NTAiIHk9IjE5MCIgd2lkdGg9IjUzMCIgaGVpZ2h0PSIyOTAiIGZpbGw9IiNmM2YwZTkiLz48cmVjdCB4PSI3NjAiIHk9IjQwNSIgd2lkdGg9IjUxNSIgaGVpZ2h0PSIyOCIgZmlsbD0iI2FjOWI4MyIvPjxyZWN0IHg9Ijc5MCIgeT0iNDUwIiB3aWR0aD0iMTg1IiBoZWlnaHQ9IjE0OCIgZmlsbD0iI2MwYjI5ZiIvPjxyZWN0IHg9Ijk5NSIgeT0iNDUwIiB3aWR0aD0iMjc4IiBoZWlnaHQ9IjE0OCIgZmlsbD0iI2FjOWM4NyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDU3MCAxMDEwLDU3MCAxMTIwLDcxMCAyNTAsNzEwIiBmaWxsPSIjZjRmMGU3Ii8+PHBvbHlnb24gcG9pbnRzPSIyNjAsNzA4IDExMTAsNzA4IDEwOTAsODM1IDI5MCw4MzUiIGZpbGw9IiM2Yzc3NmUiLz48cmVjdCB4PSI2MTAiIHk9IjE4MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMyMCIgZmlsbD0iIzMwM2EzNiIvPjxwYXRoIGQ9Ik01NTAgMjIwIEg2OTUiIHN0cm9rZT0iIzMwM2EzNiIgc3Ryb2tlLXdpZHRoPSIxNSIvPjxwYXRoIGQ9Ik01NTAgMjIwIFE1MjAgMjk1IDYwMCAzMjUgUTY3MCAzMTUgNjk1IDIyMCIgZmlsbD0iI2U4ZGVjOSIvPjxyZWN0IHg9IjQ2MCIgeT0iNzYyIiB3aWR0aD0iMTA1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjYzViMjk3Ii8+PHJlY3QgeD0iNjAwIiB5PSI3NjIiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTUiIGZpbGw9IiNjNWIyOTciLz48Y2lyY2xlIGN4PSI5ODUiIGN5PSI2NTUiIHI9IjI1IiBmaWxsPSIjMzQzYzM3Ii8+PHJlY3Qgd2lkdGg9IjE0MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjMWIyMTFmIiBvcGFjaXR5PSIuMDYiLz48L3N2Zz4="
+                                alt="Cocina moderna con mobiliario claro"><span class="arrow">↗</span></div>
+                        <div class="project-copy">
+                            <div>
+                                <h3>La cocina, el corazón</h3>
+                                <p>Reforma de cocina · Acabados</p>
+                            </div><span class="index">02 / 05</span>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="piscinas">
+                        <div class="project-img"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iI2IxYzhjYyIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjM3MCIgZmlsbD0iI2JjZDFkMSIvPjxyZWN0IHk9IjM3MCIgd2lkdGg9IjE0MDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjYzFiOGE3Ii8+PHJlY3QgeD0iNjAiIHk9IjE4MCIgd2lkdGg9IjEyNDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjZThlNGRhIi8+PHJlY3QgeD0iMTEwIiB5PSIyMzUiIHdpZHRoPSIzOTAiIGhlaWdodD0iMTg1IiBmaWxsPSIjNWE2OTYxIi8+PHJlY3QgeD0iNTQwIiB5PSIyMzUiIHdpZHRoPSI3MDAiIGhlaWdodD0iMTg1IiBmaWxsPSIjNTk2ZTY5Ii8+PHBhdGggZD0iTTAgNDQwIEgxNDAwIFY0OTUgSDAiIGZpbGw9IiM4ZjlhOGIiLz48cG9seWdvbiBwb2ludHM9IjEwMCw0OTAgMTM4MCw0OTAgMTI1MCw4NjAgMCw4NjAiIGZpbGw9IiNkN2QxYzIiLz48cG9seWdvbiBwb2ludHM9IjE3NSw1MjAgMTI3MCw1MjAgMTE1MCw4MTUgNjUsODE1IiBmaWxsPSJ1cmwoI3dhdGVyKSIvPjxwYXRoIGQ9Ik0xODUgNTcwIFE0MzAgNTUyIDU5MCA1NzAgVDEyMjAgNTY1IE0xNTAgNjM1IFE0MzAgNjIwIDYyMCA2NDAgVDExOTAgNjMwIE0xMDUgNzI1IFE0MDAgNzA4IDYwMCA3MjcgVDExNDUgNzIyIiBzdHJva2U9IiNjMWVlZWEiIG9wYWNpdHk9Ii40NCIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMTIwMCIgeT0iMzY1IiB3aWR0aD0iMjIiIGhlaWdodD0iMTM1IiBmaWxsPSIjNWU2YTVjIi8+PGNpcmNsZSBjeD0iMTIxMCIgY3k9IjMzNSIgcj0iODUiIGZpbGw9IiM2OTdjNWQiLz48cmVjdCB4PSI4NSIgeT0iMzYwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTMwIiBmaWxsPSIjNWQ2ODVhIi8+PGNpcmNsZSBjeD0iOTIiIGN5PSIzNDIiIHI9Ijc4IiBmaWxsPSIjNjY3ZTVkIi8+PHJlY3Qgd2lkdGg9IjE0MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjMWIyMTFmIiBvcGFjaXR5PSIuMDYiLz48L3N2Zz4="
+                                alt="Piscina exterior junto a una vivienda"><span class="arrow">↗</span></div>
+                        <div class="project-copy">
+                            <div>
+                                <h3>Un verano diferente</h3>
+                                <p>Reforma de piscina · Exterior</p>
+                            </div><span class="index">03 / 05</span>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="suelos">
+                        <div class="project-img"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxwYXRoIGQ9Ik0wIDc3MCBIMTQwMCBNMCA4MzAgSDE0MDAiIHN0cm9rZT0iIzgwNjE0NCIgc3Ryb2tlLXdpZHRoPSI1IiBvcGFjaXR5PSIuNSIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+"
+                                alt="Estancia contemporánea con suelo de madera"><span class="arrow">↗</span></div>
+                        <div class="project-copy">
+                            <div>
+                                <h3>Texturas naturales</h3>
+                                <p>Instalación de parquet · Acabados</p>
+                            </div><span class="index">04 / 05</span>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="interiores">
+                        <div class="project-img"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+"
+                                alt="Interior luminoso de vivienda reformada"><span class="arrow">↗</span></div>
+                        <div class="project-copy">
+                            <div>
+                                <h3>Espacios conectados</h3>
+                                <p>Reforma integral · Distribución</p>
+                            </div><span class="index">05 / 05</span>
+                        </div>
+                    </article>
+                </div>
+                <p style="color:var(--gray);font-size:11px;margin-top:27px">* Fotografías de inspiración para este
+                    boceto. No representan obras realizadas por la empresa ficticia.</p>
+            </div>
+        </section>
+        <section class="section services-section" id="servicios">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="kicker" style="color:var(--accent)">03 / Qué hacemos</p>
+                        <h2>De una idea a<br>un espacio extraordinario.</h2>
+                    </div>
+                    <p>Un solo equipo, una visión completa. Soluciones para transformar cada rincón de tu hogar.</p>
+                </div>
+                <div class="service-grid"><a href="#contacto" class="service">
+                        <div class="service-photo"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iI2IxYzhjYyIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjM3MCIgZmlsbD0iI2JjZDFkMSIvPjxyZWN0IHk9IjM3MCIgd2lkdGg9IjE0MDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjYzFiOGE3Ii8+PHJlY3QgeD0iNjAiIHk9IjE4MCIgd2lkdGg9IjEyNDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjZThlNGRhIi8+PHJlY3QgeD0iMTEwIiB5PSIyMzUiIHdpZHRoPSIzOTAiIGhlaWdodD0iMTg1IiBmaWxsPSIjNWE2OTYxIi8+PHJlY3QgeD0iNTQwIiB5PSIyMzUiIHdpZHRoPSI3MDAiIGhlaWdodD0iMTg1IiBmaWxsPSIjNTk2ZTY5Ii8+PHBhdGggZD0iTTAgNDQwIEgxNDAwIFY0OTUgSDAiIGZpbGw9IiM4ZjlhOGIiLz48cG9seWdvbiBwb2ludHM9IjEwMCw0OTAgMTM4MCw0OTAgMTI1MCw4NjAgMCw4NjAiIGZpbGw9IiNkN2QxYzIiLz48cG9seWdvbiBwb2ludHM9IjE3NSw1MjAgMTI3MCw1MjAgMTE1MCw4MTUgNjUsODE1IiBmaWxsPSJ1cmwoI3dhdGVyKSIvPjxwYXRoIGQ9Ik0xODUgNTcwIFE0MzAgNTUyIDU5MCA1NzAgVDEyMjAgNTY1IE0xNTAgNjM1IFE0MzAgNjIwIDYyMCA2NDAgVDExOTAgNjMwIE0xMDUgNzI1IFE0MDAgNzA4IDYwMCA3MjcgVDExNDUgNzIyIiBzdHJva2U9IiNjMWVlZWEiIG9wYWNpdHk9Ii40NCIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMTIwMCIgeT0iMzY1IiB3aWR0aD0iMjIiIGhlaWdodD0iMTM1IiBmaWxsPSIjNWU2YTVjIi8+PGNpcmNsZSBjeD0iMTIxMCIgY3k9IjMzNSIgcj0iODUiIGZpbGw9IiM2OTdjNWQiLz48cmVjdCB4PSI4NSIgeT0iMzYwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTMwIiBmaWxsPSIjNWQ2ODVhIi8+PGNpcmNsZSBjeD0iOTIiIGN5PSIzNDIiIHI9Ijc4IiBmaWxsPSIjNjY3ZTVkIi8+PHJlY3Qgd2lkdGg9IjE0MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjMWIyMTFmIiBvcGFjaXR5PSIuMDYiLz48L3N2Zz4="
+                                alt="Piscina"></div>
+                        <div class="service-num">01</div>
+                        <h3>Piscinas<br>y exteriores</h3>
+                        <p>Renovación de vasos, revestimientos, coronaciones y zonas exteriores.</p><span
+                            class="service-arrow">↗</span>
+                    </a><a href="#contacto" class="service">
+                        <div class="service-photo"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxyZWN0IHk9IjY4MCIgd2lkdGg9IjE0MDAiIGhlaWdodD0iMjIwIiBmaWxsPSJ1cmwoI2Zsb29yKSIvPjxyZWN0IHg9Ijc1IiB5PSIxMDUiIHdpZHRoPSIzMjAiIGhlaWdodD0iNTAwIiBmaWxsPSIjNTc2NDVlIi8+PHJlY3QgeD0iNDA1IiB5PSIxMDUiIHdpZHRoPSIzMjAiIGhlaWdodD0iNTAwIiBmaWxsPSIjZDNjMmFiIi8+PHJlY3QgeD0iNzM1IiB5PSIxMDUiIHdpZHRoPSI1NjUiIGhlaWdodD0iNTAwIiBmaWxsPSIjZTllNWRjIi8+PHJlY3QgeD0iOTIiIHk9IjEyNSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIzNjAiIGZpbGw9IiM2ZDc5NzMiLz48cmVjdCB4PSI3NTAiIHk9IjE5MCIgd2lkdGg9IjUzMCIgaGVpZ2h0PSIyOTAiIGZpbGw9IiNmM2YwZTkiLz48cmVjdCB4PSI3NjAiIHk9IjQwNSIgd2lkdGg9IjUxNSIgaGVpZ2h0PSIyOCIgZmlsbD0iI2FjOWI4MyIvPjxyZWN0IHg9Ijc5MCIgeT0iNDUwIiB3aWR0aD0iMTg1IiBoZWlnaHQ9IjE0OCIgZmlsbD0iI2MwYjI5ZiIvPjxyZWN0IHg9Ijk5NSIgeT0iNDUwIiB3aWR0aD0iMjc4IiBoZWlnaHQ9IjE0OCIgZmlsbD0iI2FjOWM4NyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDU3MCAxMDEwLDU3MCAxMTIwLDcxMCAyNTAsNzEwIiBmaWxsPSIjZjRmMGU3Ii8+PHBvbHlnb24gcG9pbnRzPSIyNjAsNzA4IDExMTAsNzA4IDEwOTAsODM1IDI5MCw4MzUiIGZpbGw9IiM2Yzc3NmUiLz48cmVjdCB4PSI2MTAiIHk9IjE4MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMyMCIgZmlsbD0iIzMwM2EzNiIvPjxwYXRoIGQ9Ik01NTAgMjIwIEg2OTUiIHN0cm9rZT0iIzMwM2EzNiIgc3Ryb2tlLXdpZHRoPSIxNSIvPjxwYXRoIGQ9Ik01NTAgMjIwIFE1MjAgMjk1IDYwMCAzMjUgUTY3MCAzMTUgNjk1IDIyMCIgZmlsbD0iI2U4ZGVjOSIvPjxyZWN0IHg9IjQ2MCIgeT0iNzYyIiB3aWR0aD0iMTA1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjYzViMjk3Ii8+PHJlY3QgeD0iNjAwIiB5PSI3NjIiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTUiIGZpbGw9IiNjNWIyOTciLz48Y2lyY2xlIGN4PSI5ODUiIGN5PSI2NTUiIHI9IjI1IiBmaWxsPSIjMzQzYzM3Ii8+PHJlY3Qgd2lkdGg9IjE0MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjMWIyMTFmIiBvcGFjaXR5PSIuMDYiLz48L3N2Zz4="
+                                alt="Cocina"></div>
+                        <div class="service-num">02</div>
+                        <h3>Cocinas<br>a medida</h3>
+                        <p>Espacios funcionales con materiales y detalles que marcan la diferencia.</p><span
+                            class="service-arrow">↗</span>
+                    </a><a href="#contacto" class="service">
+                        <div class="service-photo"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+"
+                                alt="Interior"></div>
+                        <div class="service-num">03</div>
+                        <h3>Reformas<br>integrales</h3>
+                        <p>Redistribución, baños, interiores y renovaciones completas de viviendas.</p><span
+                            class="service-arrow">↗</span>
+                    </a><a href="#contacto" class="service">
+                        <div class="service-photo"><img loading="lazy"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxwYXRoIGQ9Ik0wIDc3MCBIMTQwMCBNMCA4MzAgSDE0MDAiIHN0cm9rZT0iIzgwNjE0NCIgc3Ryb2tlLXdpZHRoPSI1IiBvcGFjaXR5PSIuNSIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+"
+                                alt="Suelo de madera"></div>
+                        <div class="service-num">04</div>
+                        <h3>Parquet<br>y suelos</h3>
+                        <p>Instalación y renovación de suelos de madera y superficies resistentes.</p><span
+                            class="service-arrow">↗</span>
+                    </a></div>
+            </div>
+        </section>
+        <section class="manifesto" id="nosotros">
+            <div class="manifesto-img" role="img" aria-label="Vivienda reformada con acabados contemporáneos"></div>
+            <div class="manifesto-content">
+                <p class="kicker">04 / El valor de cada detalle</p>
+                <h2>Un buen resultado empieza mucho antes de la obra.</h2>
+                <p>Escuchamos, planificamos y ejecutamos pensando en cómo quieres vivir. Combinamos la sensibilidad por
+                    el diseño con el oficio de quienes saben construir.</p><a href="#contacto"
+                    class="text-link">CUÉNTANOS TU IDEA ↗</a>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap beforeafter">
+                <div class="copy">
+                    <p class="kicker">05 / Transformación</p>
+                    <h2>El cambio<br>se nota.</h2>
+                    <p>Desliza la línea central para comparar dos ambientes visuales. En la web definitiva, este espacio
+                        mostrará fotografías reales del antes y después de una reforma (aquí se muestran imágenes
+                        ilustrativas).</p>
+                </div>
+                <div class="compare" id="compare"><img class="before"
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iI2M4YzRiYiIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjOTY4ODdiIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiM3Nzc5NzEiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjNzc3OTcxIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iIzc3Nzk3MSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+"
+                        alt="Referencia visual de espacio antes de modernizar"><img class="after"
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE0MDAgOTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwLjk1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ViZTdkZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2JmYjRhNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmbG9vciIgeDI9IjAiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjY2JiNDlhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGY2ZjUxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM5ZWJhYzAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkOGUyZGEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0id2F0ZXIiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzVjYTZhYiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3NGU1YiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic2hhZG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNSIvPjwvZmlsdGVyPjxwYXR0ZXJuIGlkPSJwbGFuayIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI3MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMCBIMTcwIE0wIDcwIEgxNzAgTTAgMCBWNzAiIHN0cm9rZT0iIzc3NWU0OCIgb3BhY2l0eT0iLjIyIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNjAgMTcgUTkwIDMwIDEzMCAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGI3MTU2IiBvcGFjaXR5PSIuMTciLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCN3YWxsKSIvPjxwb2x5Z29uIHBvaW50cz0iMCw2NjAgMTQwMCw2MTAgMTQwMCw5MDAgMCw5MDAiIGZpbGw9InVybCgjZmxvb3IpIi8+PHBvbHlnb24gcG9pbnRzPSIwLDY2MCAxNDAwLDYxMCAxNDAwLDkwMCAwLDkwMCIgZmlsbD0idXJsKCNwbGFuaykiLz48cmVjdCB4PSI4MjUiIHk9IjkwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjU0NSIgZmlsbD0iIzM3M2YzYiIvPjxyZWN0IHg9Ijg0NSIgeT0iMTEwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjUwNSIgZmlsbD0idXJsKCNnbGFzcykiLz48cGF0aCBkPSJNMTA2NSAxMTAgVjYxNSBNODQ1IDM2NSBIMTI4NSIgc3Ryb2tlPSIjM2U0NjQzIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTg0OCA1NjAgUTEwMTAgNDYwIDEyODAgNTIwIFY2MTUgSDg0OCIgZmlsbD0iIzYzN2U2NSIgb3BhY2l0eT0iLjY1Ii8+PHJlY3QgeD0iMTU1IiB5PSIxNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMjU1IiBmaWxsPSIjZTVkZmQzIi8+PHJlY3QgeD0iMTg3IiB5PSIxOTMiIHdpZHRoPSIyNzAiIGhlaWdodD0iMTg1IiBmaWxsPSIjM2E0ODNkIi8+PHBhdGggZD0iTTI0OCAzMTAgUTMwMCAxOTYgNDAwIDI3MCIgc3Ryb2tlPSIjZDJjMGE2IiBzdHJva2Utd2lkdGg9IjE0IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjU3MCIgY3k9Ijc1NSIgcng9IjQxMCIgcnk9IjcwIiBmaWxsPSIjNWM0OTM5IiBvcGFjaXR5PSIuMjIiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+PHJlY3QgeD0iMTc1IiB5PSI0OTUiIHdpZHRoPSI2MzUiIGhlaWdodD0iMTkwIiByeD0iNDQiIGZpbGw9IiNkZWQ5Y2UiLz48cmVjdCB4PSIyMjAiIHk9IjQ2OCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSI5MCIgcng9IjM2IiBmaWxsPSIjZGVkOWNlIi8+PHJlY3QgeD0iNTIwIiB5PSI0NjgiIHdpZHRoPSIyNTAiIGhlaWdodD0iOTAiIHJ4PSIzNiIgZmlsbD0iI2RlZDljZSIvPjxyZWN0IHg9IjIwNSIgeT0iNjQwIiB3aWR0aD0iMzUiIGhlaWdodD0iNzAiIGZpbGw9IiM2NjViNGEiLz48cmVjdCB4PSI3NDAiIHk9IjY0MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjcwIiBmaWxsPSIjNjY1YjRhIi8+PGVsbGlwc2UgY3g9IjYxMCIgY3k9Ijc1MiIgcng9IjI0NSIgcnk9IjU4IiBmaWxsPSIjNmE1NTQ0Ii8+PHJlY3QgeD0iNDQ1IiB5PSI3NDAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNTgiIHJ4PSIxNCIgZmlsbD0iIzQ5M2QzMyIvPjxwYXRoIGQ9Ik0xMjAgNTg1IEw5MCA1MTAgTTEyMCA1ODUgTDE0NiA0ODUgTTEyMCA1ODUgTDE4MCA1MzUiIHN0cm9rZT0iIzQzNWQ0MSIgc3Ryb2tlLXdpZHRoPSIyNCIvPjxyZWN0IHg9Ijc1IiB5PSI1NzAiIHdpZHRoPSIxMDUiIGhlaWdodD0iMTE2IiByeD0iOSIgZmlsbD0iIzhjN2I2NCIvPjxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iIzFiMjExZiIgb3BhY2l0eT0iLjA2Ii8+PC9zdmc+"
+                        alt="Referencia visual de interior moderno"><span class="pill before-label">Referencia
+                        A</span><span class="pill after-label">Referencia B</span>
+                    <div class="handle"></div><input type="range" min="0" max="100" value="50"
+                        aria-label="Comparar imágenes"
+                        oninput="document.getElementById('compare').style.setProperty('--split',this.value+'%')">
+                </div>
+            </div>
+        </section>
+        <section class="section" id="proceso" style="background:#e9e8e2">
+            <div class="wrap">
+                <p class="kicker" style="margin-bottom:25px">06 / Nuestro proceso</p>
+                <h2>Claro desde el primer día.</h2>
+                <div class="steps">
+                    <div class="step"><strong>01 / ESCUCHAMOS</strong>
+                        <h3>Tu idea, nuestro punto de partida.</h3>
+                        <p>Hablamos de lo que necesitas, visitamos el espacio y definimos las prioridades.</p>
+                    </div>
+                    <div class="step"><strong>02 / PLANIFICAMOS</strong>
+                        <h3>Un plan sin sorpresas.</h3>
+                        <p>Propuesta, materiales, presupuesto y calendario antes de comenzar.</p>
+                    </div>
+                    <div class="step"><strong>03 / TRANSFORMAMOS</strong>
+                        <h3>Cuidamos cada acabado.</h3>
+                        <p>Coordinamos los trabajos hasta entregar un espacio listo para disfrutar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contacto">
+            <div class="wrap contact-grid">
+                <div>
+                    <p class="kicker">07 / Hablemos de tu proyecto</p>
+                    <h2>Tu próxima reforma empieza aquí<span style="color:white">.</span></h2>
+                    <p>¿Una cocina nueva, una piscina renovada o una reforma completa? Cuéntanos qué tienes en mente y
+                        damos forma a la idea.</p>
+                </div>
+                <form id="contactForm"><input name="nombre" placeholder="Tu nombre *" required><input type="email"
+                        name="email" placeholder="Correo electrónico *" required><select name="tipo" required>
+                        <option value="">¿Qué quieres reformar? *</option>
+                        <option>Piscina o exterior</option>
+                        <option>Cocina</option>
+                        <option>Reforma integral</option>
+                        <option>Parquet o suelos</option>
+                        <option>Otro</option>
+                    </select><textarea name="mensaje" rows="3" placeholder="Cuéntanos brevemente tu proyecto *"
+                        required></textarea><button class="btn" type="submit">PREPARAR CONSULTA <span>↗</span></button>
+                    <p class="note">Demo: el formulario prepara un correo en tu dispositivo; no envía datos a ningún
+                        servidor.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-top">
+                <div><a class="logo" href="#inicio">FORMA<span>.</span></a>
+                    <div class="footer-tag">Espacios bien pensados. Reformas bien hechas.</div>
+                </div>
+                <div class="footer-cols">
+                    <div><strong>Explora</strong><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a
+                            href="#proceso">Proceso</a><a href="#contacto">Contacto</a></div>
+                    <div><strong>Estudio</strong><span>Reformas integrales</span><span>Cocinas ·
+                            Piscinas</span><span>Parquet · Interiores</span><span>España</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 FORMA. Concepto de diseño — marca ficticia.</span><span>DISEÑO
+                    EDITORIAL × CONSTRUCCIÓN</span><a href="#inicio">VOLVER ARRIBA ↑</a></div>
+        </div>
+    </footer>
+    <script>document.querySelectorAll('.filter').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.filter').forEach(x => x.classList.remove('active')); b.classList.add('active'); document.querySelectorAll('.project-card').forEach(c => c.classList.toggle('hidden', b.dataset.filter !== 'todos' && c.dataset.category !== b.dataset.filter)) })); document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))); let io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target) } }), { threshold: .1 }); document.querySelectorAll('.reveal').forEach(x => io.observe(x)); document.getElementById('contactForm').addEventListener('submit', e => { e.preventDefault(); let d = new FormData(e.currentTarget); let subject = 'Consulta de reforma: ' + d.get('tipo'); let body = 'Nombre: ' + d.get('nombre') + '\nEmail: ' + d.get('email') + '\nTipo: ' + d.get('tipo') + '\n\n' + d.get('mensaje'); window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body) });</script>
+</body>
+
+</html>
